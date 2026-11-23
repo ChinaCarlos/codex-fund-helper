@@ -1,0 +1,6 @@
+{
+  "files": {
+    "includes": ["**", "!pnpm-lock.yaml", "!dist", "!plugins/*/dist"]
+  },
+  "formatter": { "indentStyle": "space" }
+}

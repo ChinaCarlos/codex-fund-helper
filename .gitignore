@@ -1,0 +1,7 @@
+node_modules/
+dist/
+plugins/*/dist/
+plugins/*/.mcp.json
+.DS_Store
+.env*
+coverage/

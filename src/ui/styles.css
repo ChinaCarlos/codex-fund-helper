@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+@property --brand {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #b8381a;
+}
+@property --line {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #edd8ce;
+}
+@property --muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #645653;
+}
+
+.trend-slider {
+  accent-color: var(--brand);
+}
+.summary-chart {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+@media (min-width: 490px) {
+  .summary-layout {
+    grid-template-columns: minmax(8.5rem, 0.75fr) minmax(0, 2fr);
+  }
+  .summary-chart {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+    padding-top: 0;
+    padding-left: 1rem;
+  }
+}
+
+:root {
+  color-scheme: light;
+  --bg: light-dark(#fff5ef, #1d1513);
+  --surface: light-dark(#fffaf7, #291d1a);
+  --line: light-dark(#edd8ce, #4b3229);
+  --brand: light-dark(#b8381a, #ffac89);
+  --wash: light-dark(#ffe4d5, #48271d);
+  --ink: light-dark(#231b19, #fff1ee);
+  --muted: light-dark(#645653, #cab5ae);
+  --gain: light-dark(#d00000, #ff3939);
+  --loss: light-dark(#127055, #7cd9b3);
+  font-family: Inter, "PingFang SC", system-ui, sans-serif;
+}
+:root[data-palette="violet"] {
+  --bg: light-dark(#f7f2fc, #181222);
+  --surface: light-dark(#fdfaff, #241c33);
+  --line: light-dark(#e4d7f1, #493a61);
+  --brand: light-dark(#7030a7, #d8b0ff);
+  --wash: light-dark(#f0e0fd, #3a2654);
+}
+:root[data-palette="ocean"] {
+  --bg: light-dark(#f3f6fa, #111827);
+  --surface: light-dark(#fff, #192234);
+  --line: light-dark(#dde5ef, #334158);
+  --brand: light-dark(#2058b4, #a3c5ff);
+  --wash: light-dark(#e9f1ff, #243653);
+}
+:root[data-palette="jade"] {
+  --bg: light-dark(#edf8f5, #101d1b);
+  --surface: light-dark(#f7fdfa, #182a26);
+  --line: light-dark(#cde6dd, #315048);
+  --brand: light-dark(#0d6a57, #82dcc0);
+  --wash: light-dark(#d8f1e8, #23453a);
+}
+:root[data-palette="gold"] {
+  --bg: light-dark(#fbf5e5, #1d180e);
+  --surface: light-dark(#fffaf0, #2a2315);
+  --line: light-dark(#e8d8ad, #544329);
+  --brand: light-dark(#805600, #efc76b);
+  --wash: light-dark(#f7e8bc, #463718);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+}
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+.summary {
+  background: linear-gradient(120deg, var(--wash), var(--surface));
+  border: 1px solid var(--line);
+}
+.line {
+  border-bottom: 1px solid var(--line);
+}
+.muted {
+  color: var(--muted);
+}
+.gain {
+  color: var(--gain);
+}
+.loss {
+  color: var(--loss);
+}
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+.app-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: var(--wash);
+  color: var(--brand);
+}
+.control,
+.icon-button,
+.primary,
+.filter,
+.sort {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 0.6rem;
+  padding: 0.42rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.control,
+.icon-button {
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.theme-picker {
+  color: var(--brand);
+}
+.theme-picker select {
+  color: var(--ink);
+  background: var(--surface);
+  cursor: pointer;
+}
+.icon-button {
+  min-width: 2.15rem;
+  min-height: 2.15rem;
+  padding: 0.35rem;
+}
+.primary,
+.filter[aria-pressed="true"],
+.sort[aria-pressed="true"],
+.tag {
+  background: var(--wash);
+  color: var(--brand);
+}
+.filter,
+.sort {
+  color: var(--muted);
+}
+.tag {
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.35rem;
+}
+button:hover:enabled {
+  color: var(--brand);
+  background: var(--wash);
+}
+button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+.error-panel {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--gain);
+  border-radius: 0.65rem;
+  padding: 0.7rem 1rem;
+  font-size: 0.85rem;
+}
+table th,
+table td {
+  padding: 0.65rem 0.55rem;
+  text-align: right;
+}
+table tr > :first-child {
+  text-align: left;
+  padding-left: 1rem;
+}
+table tr > :last-child {
+  padding-right: 1rem;
+}
+table tbody tr {
+  border-top: 1px solid var(--line);
+}
+table tbody tr:hover {
+  background: var(--wash);
+}

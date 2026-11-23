@@ -1,0 +1,12 @@
+{
+  "name": "codex-fund-helper",
+  "version": "0.1.8",
+  "description": "基金持仓、市场指数与当日收益仪表盘。",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "基金助手",
+    "shortDescription": "查看指数、估值和基金持仓。",
+    "composerIcon": "./assets/fund-helper.png",
+    "logo": "./assets/fund-helper.png"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "carlosc-fund-tools",
+  "interface": { "displayName": "Carlos · 基金工具" },
+  "plugins": [
+    {
+      "name": "codex-fund-helper",
+      "source": { "source": "local", "path": "./plugins/codex-fund-helper" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Finance"
+    }
+  ]
+}
